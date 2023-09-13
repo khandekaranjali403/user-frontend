@@ -7,17 +7,13 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class LoginuserService {
-  loginUser(user: User) {
-    throw new Error('Method not implemented.');
+  private baseUrl ="http://localhost:8081/login";
+  constructor(private httpClient:HttpClient) { }
+  
+
+  loginUser (user: User) : Observable<object>
+  {
+    return this.httpClient.post(`${this.baseUrl}`,user);
   }
-
-  // private baseUrl = "http://localhost:8081/user/login";
-  // constructor(private httpClient: HttpClient) {
-
-  //  this.loginUser(User: User): Observable <Object> {
-  //   console.log(User);
-
-  //     return this.httpClient.post(`${this.baseUrl}`,user));
-  //   }
-  // }
+  
 }
