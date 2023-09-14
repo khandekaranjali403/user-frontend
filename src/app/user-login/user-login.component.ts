@@ -9,19 +9,22 @@ import { LoginuserService } from '../loginuser.service';
 })
 export class UserLoginComponent implements OnInit{
 
-  user:User = new User();
-
-  constructor(private loginuserservice: LoginuserService){}
+  constructor(private loginuserService: LoginuserService){ }
 
   ngOnInit(): void {}  
   
+  user:User = new User();
+    userclick()
+    {
+      console.log("save");
+    }
 
   userLogin(){
-    console.log(this.user);
-   
-    this.loginuserservice.loginUser(this.user).subscribe (data => {
-      alert("login sucessfull")
-    } , error => alert("sorry"));
+    this.loginuserService.loginUser(this.user).subscribe
+    (data => 
+      {
+      alert("User login sucessfully")
+     } , error => alert("Please Enter Correct Username and Password"));
   }
 }
 

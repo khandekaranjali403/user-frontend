@@ -1,20 +1,35 @@
-<div class="container col-md-6">
-    <h1 style="color:red">User Login</h1>
-    <form (ngSubmit)="userLogin()">
+<section class="vh-100" style="background-color: #508bfc;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
 
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">UserName</label>
-            <input type="text" [(ngModel)]="user.userName" class="form-control" id="username" name="userName">
-        </div>
+                        <h3 class="mb-5">Sign in</h3>
+                        <form (ngSubmit)="userLogin()">
 
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Password</label>
-            <input type="password" [(ngModel)]="user.password" class="form-control" id="password" name="password">
+
+                            
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">UserName</label>
+                                <input type="text" [(ngModel)]="user.username" class="form-control" id="username"
+                                    name="userName">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Password</label>
+                                <input type="password" [(ngModel)]="user.password" class="form-control" id="password"
+                                    name="password">
+                            </div>
+
+                            <button  class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                            <hr class="my-4">
+                            <a href="http://localhost:8081/open">User details</a>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div> -->
-          <button  type="submit" class="btn btn-primary">Login</button>
-    </form>
-</div>
+    </div>
+</section>
